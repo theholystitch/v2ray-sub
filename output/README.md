@@ -1,7 +1,7 @@
 # V2Ray Sub - Stitch
 
-**Updated:** 2026-08-08 23:03 UTC
-**Total configs:** 165 (all tested)
+**Updated:** 2026-08-09 04:46 UTC
+**Total configs:** 157 (all tested)
 
 ## Subscription Links
 - Text: `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.txt`
@@ -11,25 +11,25 @@
 ## Protocols
 - `VLESS`: 72
 - `SS`: 72
-- `VMESS`: 14
-- `TROJAN`: 7
+- `TROJAN`: 8
+- `VMESS`: 5
 
 ## Countries
-- 🌐 `UN`: 84
-- 🇨🇦 `CA`: 29
-- 🇩🇪 `DE`: 14
-- 🇺🇸 `US`: 8
-- 🇮🇷 `IR`: 7
-- 🇸🇪 `SE`: 3
-- 🇷🇺 `RU`: 3
-- 🇫🇮 `FI`: 3
+- 🌐 `UN`: 40
+- 🇨🇦 `CA`: 35
+- 🇩🇪 `DE`: 16
+- 🇺🇸 `US`: 11
+- 🇮🇷 `IR`: 11
+- 🇷🇺 `RU`: 8
+- 🇫🇮 `FI`: 4
+- 🇳🇱 `NL`: 3
+- 🇹🇷 `TR`: 3
+- 🇬🇧 `GB`: 3
+- 🇫🇷 `FR`: 3
+- 🇧🇪 `BE`: 3
 - 🇪🇸 `ES`: 2
-- 🇮🇳 `IN`: 2
-- 🇹🇷 `TR`: 2
-- 🇬🇧 `GB`: 1
-- 🇦🇿 `AZ`: 1
-- 🇫🇷 `FR`: 1
-- 🇯🇵 `JP`: 1
+- 🌐 `CO`: 2
+- 🇨🇭 `CH`: 2
 
 ---
 Auto-updated every 2 hours via GitHub Actions.
