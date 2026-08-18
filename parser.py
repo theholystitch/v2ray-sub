@@ -84,32 +84,44 @@ def parse_ss(link):
         return None
 
 PARSERS = {
-    'vmess': parse_vmess,
-    'vless': parse_vless,
-    'trojan': parse_trojan,
-    'ss': parse_ss,
+    'vmess://': parse_vmess,
+    'vless://': parse_vless,
+    'trojan://': parse_trojan,
+    'ss://': parse_ss,
 }
 
 def parse_link(link):
-    for proto, parser in PARSERS.items():
-        if link.startswith(proto + '://'):
+    for prefix, parser in PARSERS.items():
+        if link.startswith(prefix):
             return parser(link)
     return None
 
 def parse_all(raw_results):
-    print("Parsing configs...")
-    all_links = []
-    for proto, links in raw_results.items():
-        all_links.extend([(proto, l) for l in links])
+    print("Parsing configs from raw text...")
+    
+    # استخراج متن خام از ورودی (چه دیکشنری باشد چه رشته مستقیم)
+    if isinstance(raw_results, dict):
+        raw_text = raw_results.get("raw", "")
+    else:
+        raw_text = str(raw_results)
+    
+    # جدا کردن متن خط به خط یا بر اساس فاصله/انتقال خطوط
+    lines = raw_text.splitlines()
     
     parsed = []
-    for proto, link in all_links:
-        info = parse_link(link)
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        
+        # بررسی اینکه آیا خط شامل لینک کانفیگ است یا خیر
+        info = parse_link(line)
         if info and info.get('host') and info.get('port'):
             parsed.append(info)
+            
+    print(f"Valid configs found: {len(parsed)}")
     
-    print(f"Valid configs: {len(parsed)}")
-    
+    # حذف موارد تکراری بر اساس پروتکل، هاست و پورت
     seen = set()
     unique = []
     for info in parsed:
