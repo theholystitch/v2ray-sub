@@ -1,64 +1,39 @@
-import httpx
-import re
-from bs4 import BeautifulSoup
+import requests
+import base64
 
-CHANNELS = [
-    "ConfigsHUB",
-    "ConfigsHUB2",
-    "ConfigsHubPlus",
-    "AR14N24B",
-    "SOSkeyNET",
-    "persianvpnhub",
-    "filembad",
+SOURCES = [
+    "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs_no5.txt",
+    "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs_no7.txt",
+    "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
+    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/All_Configs_base64_Sub.txt",
+    "https://raw.githubusercontent.com/roosterkid/openproxylist/refs/heads/main/V2RAY_RAW.txt"
 ]
 
-PATTERNS = {
-    'vmess': re.compile(r'vmess://[A-Za-z0-9+/=]+'),
-    'vless': re.compile(r'vless://[^\s<>"]+'),
-    'trojan': re.compile(r'trojan://[^\s<>"]+'),
-    'ss':    re.compile(r'ss://[^\s<>"]+'),
-}
-
-def scrape_channel(channel, limit=100):
-    url = f"https://t.me/s/{channel}"
-    found_links = {k: set() for k in PATTERNS}
-    
+def decode_if_base64(data):
+    """اگر محتوا Base64 باشد، آن را دیکود می‌کند."""
     try:
-        print(f"  Scraping {channel}...")
-        r = httpx.get(url, timeout=30, headers={
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-        })
-        
-        if r.status_code != 200:
-            print(f"    Failed: {r.status_code}")
-            return found_links
-        
-        soup = BeautifulSoup(r.text, 'html.parser')
-        messages = soup.find_all('div', class_='tgme_widget_message_text')
-        
-        for msg in messages[:limit]:
-            text = msg.get_text()
-            for proto, pattern in PATTERNS.items():
-                found = pattern.findall(text)
-                found_links[proto].update(found)
-    
-    except Exception as e:
-        print(f"    Error: {e}")
-    
-    return found_links
+        # حذف کاراکترهای اضافه و دیکود کردن
+        decoded = base64.b64decode(data.strip()).decode('utf-8')
+        return decoded
+    except:
+        return data
 
 def scrape_all():
-    print("Scraping channels...")
-    all_results = {k: set() for k in PATTERNS}
+    all_content = []
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
     
-    for channel in CHANNELS:
-        result = scrape_channel(channel)
-        for proto, links in result.items():
-            all_results[proto].update(links)
-    
-    total = sum(len(v) for v in all_results.values())
-    print(f"Total found: {total}")
-    for proto, links in all_results.items():
-        print(f"  {proto}: {len(links)}")
-    
-    return all_results
+    for url in SOURCES:
+        try:
+            print(f"Fetching from: {url.split('/')[-1]}")
+            response = requests.get(url, headers=headers, timeout=15)
+            if response.status_code == 200:
+                content = response.text
+                # بررسی اینکه آیا محتوا Base64 است یا متن عادی
+                processed_content = decode_if_base64(content)
+                all_content.append(processed_content)
+            else:
+                print(f"Failed to fetch {url}: Status {response.status_code}")
+        except Exception as e:
+            print(f"Error fetching {url}: {e}")
+            
+    return "\n".join(all_content)
