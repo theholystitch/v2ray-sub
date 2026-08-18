@@ -2,7 +2,7 @@ import requests
 import base64
 from bs4 import BeautifulSoup
 
-# منابع فایل‌های خام گیت‌هاب
+# منابع فایل‌های خام گیت‌هاب و ساب‌های تجمیع‌شده
 FILE_SOURCES = [
     "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs_no5.txt",
     "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs_no7.txt",
@@ -11,7 +11,7 @@ FILE_SOURCES = [
     "https://raw.githubusercontent.com/roosterkid/openproxylist/refs/heads/main/V2RAY_RAW.txt"
 ]
 
-# منابع کانال‌های تلگرامی (به صورت پیش‌نمایش وب t.me/s/)
+# منابع کانال‌های تلگرامی
 TELEGRAM_SOURCES = [
     "https://t.me/s/ConfigsHUB",
     "https://t.me/s/ConfigsHUB2",
