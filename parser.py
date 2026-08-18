@@ -99,13 +99,11 @@ def parse_link(link):
 def parse_all(raw_results):
     print("Parsing configs from raw text...")
     
-    # استخراج متن خام از ورودی (چه دیکشنری باشد چه رشته مستقیم)
     if isinstance(raw_results, dict):
         raw_text = raw_results.get("raw", "")
     else:
         raw_text = str(raw_results)
     
-    # جدا کردن متن خط به خط یا بر اساس فاصله/انتقال خطوط
     lines = raw_text.splitlines()
     
     parsed = []
@@ -114,14 +112,12 @@ def parse_all(raw_results):
         if not line:
             continue
         
-        # بررسی اینکه آیا خط شامل لینک کانفیگ است یا خیر
         info = parse_link(line)
         if info and info.get('host') and info.get('port'):
             parsed.append(info)
             
     print(f"Valid configs found: {len(parsed)}")
     
-    # حذف موارد تکراری بر اساس پروتکل، هاست و پورت
     seen = set()
     unique = []
     for info in parsed:
