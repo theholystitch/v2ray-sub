@@ -1,30 +1,61 @@
-import requests
-import base64
+import urllib.parse
 
-def scrape_all():
-    url = "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    
+def parse_vless(link):
     try:
-        print(f"Fetching from target source: {url}")
-        response = requests.get(url, headers=headers, timeout=15)
-        if response.status_code == 200:
-            content = response.text.strip()
-            
-            # تلاش برای دیکود کردن به عنوان Base64 (چون خیلی از ساب‌ها بیس۶۴ هستند)
-            try:
-                # اصلاح پدینگ base64 اگر نیاز باشد
-                padded = content + "=" * (-len(content) % 4)
-                decoded_bytes = base64.b64decode(padded)
-                decoded_text = decoded_bytes.decode('utf-8', errors='ignore')
-                print("Successfully decoded Base64 content from source.")
-                return {"raw": decoded_text}
-            except Exception as e:
-                # اگر بیس۶۴ نبود، همان متن خام را برمی‌گرداند
-                print("Content is plain text.")
-                return {"raw": content}
-                
-    except Exception as e:
-        print(f"Error fetching source: {e}")
+        rest = link.replace("vless://", "")
+        name = ""
+        if '#' in rest:
+            rest, name = rest.split('#', 1)
+            name = urllib.parse.unquote(name)
         
-    return {"raw": ""}
+        if '@' in rest:
+            creds, host_part = rest.split('@', 1)
+        else:
+            host_part = rest
+            
+        if ':' in host_part:
+            host, port_part = host_part.split(':', 1)
+            port = int(port_part.split('?')[0].split('/')[0])
+        else:
+            return None
+            
+        return {
+            'protocol': 'vless',
+            'host': host,
+            'port': port,
+            'name': name,
+            'raw': link
+        }
+    except:
+        return None
+
+def parse_all(raw_results):
+    print("Parsing all Vless configs from source...")
+    
+    if isinstance(raw_results, dict):
+        raw_text = raw_results.get("raw", "")
+    else:
+        raw_text = str(raw_results)
+    
+    lines = raw_text.splitlines()
+    parsed = []
+    
+    for line in lines:
+        line = line.strip()
+        if line.startswith("vless://"):
+            info = parse_vless(line)
+            if info and info.get('host') and info.get('port'):
+                parsed.append(info)
+            
+    print(f"Valid Vless configs found: {len(parsed)}")
+    
+    seen = set()
+    unique = []
+    for info in parsed:
+        key = f"{info['protocol']}://{info['host']}:{info['port']}"
+        if key not in seen:
+            seen.add(key)
+            unique.append(info)
+    
+    print(f"Unique Vless configs: {len(unique)}")
+    return unique
