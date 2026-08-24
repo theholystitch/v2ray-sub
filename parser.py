@@ -1,12 +1,18 @@
+import re
 import urllib.parse
 
 def parse_vless(link):
     try:
+        # پاک کردن کاراکترهای اضافی احتمالی در انتهای لینک
+        link = link.strip().split()[0]
+        if not link.startswith("vless://"):
+            return None
+            
         rest = link.replace("vless://", "")
         name = ""
         if '#' in rest:
             rest, name = rest.split('#', 1)
-            name = urllib.parse.unquote(name)
+            name = urllib.parse.unquote(name.strip())
         
         if '@' in rest:
             creds, host_part = rest.split('@', 1)
@@ -30,22 +36,22 @@ def parse_vless(link):
         return None
 
 def parse_all(raw_results):
-    print("Parsing all Vless configs from source...")
+    print("Parsing all Vless configs using pattern matching...")
     
     if isinstance(raw_results, dict):
         raw_text = raw_results.get("raw", "")
     else:
         raw_text = str(raw_results)
     
-    lines = raw_text.splitlines()
-    parsed = []
+    # استفاده از Regular Expression برای پیدا کردن تمام الگوهای vless:// در هر کجای متن
+    # این روش حتی اگر لینک‌ها به هم چسبیده یا در متن ریخته شده باشند را پیدا می‌کند
+    vless_links = re.findall(r'vless://[^\s<>"\'%]+', raw_text)
     
-    for line in lines:
-        line = line.strip()
-        if line.startswith("vless://"):
-            info = parse_vless(line)
-            if info and info.get('host') and info.get('port'):
-                parsed.append(info)
+    parsed = []
+    for link in vless_links:
+        info = parse_vless(link)
+        if info and info.get('host') and info.get('port'):
+            parsed.append(info)
             
     print(f"Valid Vless configs found: {len(parsed)}")
     
