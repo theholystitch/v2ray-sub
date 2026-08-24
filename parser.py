@@ -7,9 +7,19 @@ def parse_vless(link):
         if '#' in rest:
             rest, name = rest.split('#', 1)
             name = urllib.parse.unquote(name)
-        creds, host_part = rest.split('@', 1)
-        host, port = host_part.split(':', 1)
-        port = int(port.split('?')[0])
+        
+        # جدا کردن مشخصات اتصال
+        if '@' in rest:
+            creds, host_part = rest.split('@', 1)
+        else:
+            host_part = rest
+            
+        if ':' in host_part:
+            host, port_part = host_part.split(':', 1)
+            port = int(port_part.split('?')[0].split('/')[0])
+        else:
+            return None
+            
         return {
             'protocol': 'vless',
             'host': host,
@@ -21,7 +31,7 @@ def parse_vless(link):
         return None
 
 def parse_all(raw_results):
-    print("Parsing Vless configs from raw text...")
+    print("Parsing all Vless configs from source...")
     
     if isinstance(raw_results, dict):
         raw_text = raw_results.get("raw", "")
@@ -29,20 +39,19 @@ def parse_all(raw_results):
         raw_text = str(raw_results)
     
     lines = raw_text.splitlines()
-    
     parsed = []
+    
     for line in lines:
         line = line.strip()
-        # فقط لینک‌های vless را قبول کن
-        if not line or not line.startswith("vless://"):
-            continue
-        
-        info = parse_vless(line)
-        if info and info.get('host') and info.get('port'):
-            parsed.append(info)
+        # بررسی خطوطی که با vless شروع می‌شوند
+        if line.startswith("vless://"):
+            info = parse_vless(line)
+            if info and info.get('host') and info.get('port'):
+                parsed.append(info)
             
     print(f"Valid Vless configs found: {len(parsed)}")
     
+    # حذف موارد تکراری
     seen = set()
     unique = []
     for info in parsed:
