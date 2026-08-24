@@ -7,16 +7,26 @@ def scrape_all():
     
     try:
         print(f"Fetching from target source: {url}")
-        response = requests.get(url, headers=headers, timeout=15)
+        response = requests.get(url, headers=headers, timeout=20)
+        print(f"Response Status Code: {response.status_code}")
+        
         if response.status_code == 200:
-            content = response.text
-            # اگر محتوا بیس۶۴ بود دیکود می‌کند، در غیر این صورت متن خام برمی‌گرداند
+            content = response.text.strip()
+            print(f"Raw content length fetched: {len(content)}")
+            
+            # اگر محتوا بیس۶۴ باشد
             try:
-                decoded = base64.b64decode(content.strip()).decode('utf-8')
-                return {"raw": decoded}
-            except:
+                padded = content + "=" * (-len(content) % 4)
+                decoded_bytes = base64.b64decode(padded)
+                decoded_text = decoded_bytes.decode('utf-8', errors='ignore')
+                print(f"Decoded text length: {len(decoded_text)}")
+                return {"raw": decoded_text}
+            except Exception as e:
+                print(f"Not base64, using plain text. Error: {e}")
                 return {"raw": content}
+        else:
+            print(f"Failed to fetch. Status code: {response.status_code}")
     except Exception as e:
-        print(f"Error fetching source: {e}")
+        print(f"Connection Error fetching source: {e}")
         
     return {"raw": ""}
