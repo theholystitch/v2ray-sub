@@ -1,34 +1,21 @@
-import socket
 import httpx
-import asyncio
-
-FLAGS = {
-    'US': '🇺🇸', 'DE': '🇩🇪', 'FR': '🇫🇷', 'NL': '🇳🇱', 'GB': '🇬🇧',
-    'CA': '🇨🇦', 'JP': '🇯🇵', 'SG': '🇸🇬', 'KR': '🇰🇷', 'HK': '🇭🇰',
-    'TW': '🇹🇼', 'TR': '🇹🇷', 'IR': '🇮🇷', 'RU': '🇷🇺', 'IT': '🇮🇹',
-    'ES': '🇪🇸', 'SE': '🇸🇪', 'FI': '🇫🇮', 'CH': '🇨🇭', 'AT': '🇦🇹',
-    'PL': '🇵🇱', 'RO': '🇷🇴', 'IE': '🇮🇪', 'BE': '🇧🇪', 'DK': '🇩🇰',
-    'NO': '🇳🇴', 'CZ': '🇨🇿', 'HU': '🇭🇺', 'PT': '🇵🇹', 'GR': '🇬🇷',
-    'AU': '🇦🇺', 'BR': '🇧🇷', 'IN': '🇮🇳', 'ID': '🇮🇩', 'TH': '🇹🇭',
-    'VN': '🇻🇳', 'MY': '🇲🇾', 'PH': '🇵🇭', 'AE': '🇦🇪', 'SA': '🇸🇦',
-    'IL': '🇮🇱', 'EG': '🇪🇬', 'ZA': '🇿🇦', 'MX': '🇲🇽', 'AR': '🇦🇷',
-    'UA': '🇺🇦', 'GE': '🇬🇪', 'AM': '🇦🇲', 'AZ': '🇦🇿', 'CY': '🇨🇾',
-}
 
 async def get_country(host):
     try:
-        try:
-            ip = socket.gethostbyname(host)
-        except:
-            return 'UN'
-        
-        async with httpx.AsyncClient(timeout=5) as client:
-            r = await client.get(f"http://ip-api.com/json/{ip}?fields=countryCode")
-            if r.status_code == 200:
-                return r.json().get('countryCode', 'UN')
+        # پاکسازی هاست از پورت یا کاراکترهای اضافی
+        clean_host = host.split(':')[0]
+        async with httpx.AsyncClient(timeout=3.0) as client:
+            res = await client.get(f"http://ip-api.com/json/{clean_host}?fields=status,countryCode")
+            if res.status_code == 200:
+                data = res.json()
+                if data.get("status") == "success":
+                    return data.get("countryCode", "UN").upper()
     except:
         pass
-    return 'UN'
+    return "UN"
 
-def get_flag(code):
-    return FLAGS.get(code, '🌐')
+def get_flag(country_code):
+    if not country_code or country_code == "UN" or len(country_code) != 2:
+        return "🌍"
+    # تبدیل کد دو حرفی کشور به پرچم ایموجی
+    return chr(127397 + ord(country_code[0])) + chr(127397 + ord(country_code[1]))
