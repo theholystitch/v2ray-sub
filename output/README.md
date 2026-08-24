@@ -1,6 +1,6 @@
 # V2Ray Sub - Stitch
 
-**Updated:** 2026-08-24 10:20 UTC
+**Updated:** 2026-08-24 10:27 UTC
 **Total configs:** 2 (all tested)
 
 ## Subscription Links
