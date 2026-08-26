@@ -1,6 +1,6 @@
 # V2Ray Sub - Stitch
 
-**Updated:** 2026-08-26 00:54 UTC
+**Updated:** 2026-08-26 06:37 UTC
 **Total configs:** 200 (all tested)
 
 ## Subscription Links
@@ -13,14 +13,13 @@
 
 ## Countries
 - 🌍 `UN`: 110
+- 🇨🇦 `CA`: 44
 - 🇺🇸 `US`: 35
-- 🇳🇱 `NL`: 20
-- 🇩🇪 `DE`: 14
-- 🇨🇦 `CA`: 9
-- 🇬🇧 `GB`: 8
-- 🇫🇷 `FR`: 2
-- 🇵🇱 `PL`: 1
-- 🇮🇹 `IT`: 1
+- 🇩🇪 `DE`: 5
+- 🇯🇵 `JP`: 3
+- 🇹🇼 `TW`: 1
+- 🇰🇷 `KR`: 1
+- 🇳🇱 `NL`: 1
 
 ---
 Auto-updated every 2 hours via GitHub Actions.
