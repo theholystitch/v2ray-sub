@@ -1,6 +1,6 @@
 # V2Ray Sub - Stitch
 
-**Updated:** 2026-09-03 02:27 UTC
+**Updated:** 2026-09-03 10:31 UTC
 **Total configs:** 200 (all tested)
 
 ## Subscription Links
@@ -12,11 +12,10 @@
 - `VLESS`: 200
 
 ## Countries
-- 🇨🇦 `CA`: 88
+- 🇨🇦 `CA`: 76
 - 🌍 `UN`: 65
-- 🇺🇸 `US`: 45
-- 🇳🇱 `NL`: 1
-- 🇬🇧 `GB`: 1
+- 🇺🇸 `US`: 58
+- 🇯🇵 `JP`: 1
 
 ---
 Auto-updated every 2 hours via GitHub Actions.
