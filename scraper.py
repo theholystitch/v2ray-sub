@@ -78,8 +78,16 @@ def scrape_all():
     
     print(f"Fetched {success}/{len(FILE_SOURCES)} sources successfully")
     
+    # SEED: User's proven working Trojan Fastly CDN config for Iran - guaranteed fresh
+    # This ensures at least one known-good config is always in output
+    SEED_CONFIGS = [
+        "trojan://MiTiVPN@151.101.56.7:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#%40prrofile_purple%20%7C%20FAST%20%F0%9F%92%9A",
+    ]
+    all_texts.extend(SEED_CONFIGS)
+    print(f"Added {len(SEED_CONFIGS)} proven seed configs (Fastly Trojan)")
+    
     combined = "\n".join(all_texts)
-    for proto in ['vless', 'vmess', 'trojan', 'ss://', 'hysteria2', 'hy2://', 'tuic', 'reality']:
+    for proto in ['vless', 'vmess', 'trojan', 'ss://', 'hysteria2', 'hy2://', 'tuic', 'reality', 'fastly']:
         cnt = combined.lower().count(proto.lower())
         if cnt:
             print(f"  {proto}: {cnt} occurrences in raw")

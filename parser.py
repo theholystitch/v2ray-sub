@@ -52,12 +52,28 @@ def iran_score(info):
             score += 5
 
     # 3. Trojan + TLS on 443 - still works well in Iran
+    # USER-PROVEN: Trojan WS + TLS + Fastly CDN (ssl.fastly.com) works in Iran 2026
+    # Example: trojan://MiTiVPN@151.101.56.7:443?host=mitivpn...fastly.net&sni=ssl.fastly.com&type=ws&security=tls
     if info['protocol'] == 'trojan':
         score += 55
         if port == 443:
             score += 15
         if 'tls' in raw_low:
             score += 10
+        # Trojan WS + TLS + CDN is BEST for Iran (user's working config)
+        if 'type=ws' in raw_low and 'security=tls' in raw_low:
+            score += 35  # boost CDN WS
+            # Fastly CDN detection - user's proven config
+            if 'fastly' in raw_low:
+                score += 45  # Fastly is top CDN for Iran now
+            elif 'cloudflare' in raw_low or 'cdn' in raw_low:
+                score += 20
+            # host header with fastly.net / sni ssl.fastly.com
+            if 'fastly.net' in raw_low or 'ssl.fastly.com' in raw_low:
+                score += 20
+            # Firefox fp with WS is common for Trojan CDN
+            if 'fp=firefox' in raw_low or 'fp=chrome' in raw_low:
+                score += 5
 
     # 4. VLESS TLS is better than plain
     if 'tls' in raw_low or 'security=tls' in raw_low:
@@ -67,6 +83,11 @@ def iran_score(info):
         # WS + TLS + CDN is common in yebekhe
         if 'ws' in raw_low and port in (443, 8443, 2053):
             score += 10
+            if 'fastly' in raw_low:
+                score += 30
+        # VLESS Fastly also works
+        if 'fastly' in raw_low and 'tls' in raw_low:
+            score += 25
 
     # 5. Favored ports for Iran DPI bypass (like yebekhe & barry-far)
     if port in IRAN_FAV_PORTS:
@@ -278,12 +299,16 @@ def parse_all(raw_results):
         print(f"  {proto}: {len(links)} raw -> {cnt} valid")
     print(f"Total valid configs found: {len(parsed)}")
     
+    # DEDUP: For Iran CDN (Fastly/Cloudflare) same IP:port but different sni/host/path are DIFFERENT configs
+    # Use full raw without fragment - preserves CDN distinctness (user's Fastly case)
     seen = set()
     unique = []
     for info in parsed:
-        key = f"{info['host']}:{info['port']}"
-        if key not in seen:
-            seen.add(key)
+        # Use raw link without #name as dedup key - keeps different host/sni/path as separate
+        raw_key = info['raw'].split('#')[0].strip()
+        # Also normalize: lower query order doesn't matter, but raw is sufficient
+        if raw_key not in seen:
+            seen.add(raw_key)
             unique.append(info)
     
     unique.sort(key=lambda x: x.get('_iran_score', 0), reverse=True)

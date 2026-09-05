@@ -20,7 +20,7 @@ IRAN_GOOD_COUNTRIES = {"DE", "NL", "TR", "FR", "GB", "US", "FI", "SE", "PL", "AE
 async def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     print("=" * 50)
-    print("V2Ray Sub Bot - Iran + GPT-GEMINI Optimized 🇮🇷🤖")
+    print("V2Ray Sub Bot - Iran + GPT-GEMINI Optimized")
     print("=" * 50)
     
     raw_results = scrape_all()
@@ -157,7 +157,7 @@ async def main():
         f.write(b64_gpt)
     
     json_data = {
-        "name": "Stitch Iran 🇮🇷",
+        "name": "Stitch Iran",
         "updated": timestamp,
         "total": len(renamed),
         "optimized_for": "Iran + GPT-GEMINI",
@@ -176,7 +176,7 @@ async def main():
     country_stats = Counter(c for _, c, _ in selected)
     gpt_country_stats = Counter(c for _, c, _ in gpt_selected)
     
-    md = f"""# V2Ray Sub - Stitch Iran 🇮🇷🤖
+    md = f"""# V2Ray Sub - Stitch Iran
 
 **Updated:** {timestamp}
 **Total:** {len(renamed)} (Iran-optimized, TCP-tested) | **GPT-GEMINI:** {len(gpt_selected)}
@@ -184,16 +184,16 @@ async def main():
 ## Subscription Links
 - **Main (Iran):** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.txt`
 - **Base64 Main:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.b64`
-- **GPT-GEMINI 🤖:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub_gpt.txt` — Clean US/EU IPs for ChatGPT/Gemini
+- **GPT-GEMINI:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub_gpt.txt` — Clean US/EU IPs for ChatGPT/Gemini
 - **Base64 GPT:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub_gpt.b64`
 - **JSON:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.json`
 
 ## Why Iran Optimized? (yebekhe-style)
-- ✅ Reality validated (`pbk` 44 chars, `fp=chrome`, `sni=google.com`, `flow=xtls-rprx-vision`) - top priority
-- ✅ Hysteria2/TUIC UDP for Iran DPI
-- ✅ Port 443/2053/2083 prioritized
-- ✅ IR filtered, DE/NL/TR/US preferred
-- 🤖 GPT-GEMINI tagged: only `US/GB/DE/FR/NL/CA/JP` etc. non-blocked, `hosting=false` preferred for Gemini
+- Reality validated (`pbk` 44 chars, `fp=chrome`, `sni=google.com`, `flow=xtls-rprx-vision`) - top priority
+- Hysteria2/TUIC UDP for Iran DPI
+- Port 443/2053/2083 prioritized
+- IR filtered, DE/NL/TR/US preferred
+- GPT-GEMINI tagged: only `US/GB/DE/FR/NL/CA/JP` etc. non-blocked, `hosting=false` preferred for Gemini
 
 ## Protocols
 """
@@ -205,8 +205,8 @@ async def main():
         flag = get_flag(country)
         md += f"- {flag} `{country}`: {count}\n"
     
-    md += "\n## 🤖 GPT-GEMINI Countries (ChatGPT/Gemini tested)\n"
-    md += "_These configs have `🤖 GPT-GEMINI` in name and are in AI-allowed countries with clean IPs_\n"
+    md += "\n## GPT-GEMINI Countries (ChatGPT/Gemini tested)\n"
+    md += "_These configs have `GPT-GEMINI` in name and are in AI-allowed countries with clean IPs_\n"
     for country, count in gpt_country_stats.most_common(10):
         flag = get_flag(country)
         md += f"- {flag} `{country}`: {count}\n"

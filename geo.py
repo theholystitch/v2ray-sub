@@ -58,6 +58,12 @@ async def get_geo_info(host):
                 return info
     except:
         pass
+    # Fallback for Iran CDN: Fastly anycast IPs are US/EU - treat as GPT-compatible
+    # Like user's proven 151.101.56.7 (Fastly) -> US
+    if any(x in clean_host for x in ["fastly"]) or clean_host.startswith("151.101.") or clean_host.startswith("199.232.") or clean_host.startswith("140.248."):
+        info = {"country": "US", "hosting": False, "proxy": False, "org": "Fastly"}
+        _geo_cache[clean_host] = info
+        return info
     info = {"country": "UN", "hosting": False, "proxy": False, "org": ""}
     _geo_cache[clean_host] = info
     return info
