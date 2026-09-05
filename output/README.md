@@ -1,40 +1,56 @@
-# V2Ray Sub - Stitch Iran 🇮🇷
+# V2Ray Sub - Stitch Iran
 
-**Updated:** 2026-09-05 20:22 UTC
-**Total configs:** 300 (TCP-tested, Iran-optimized)
-**Optimized for:** Iran Internet (Reality/HY2 prioritized, IR filtered)
+**Updated:** 2026-09-05 22:33 UTC
+**Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 100
 
 ## Subscription Links
-- Text: `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.txt`
-- Base64: `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.b64`
-- JSON: `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.json`
+- **Main (Iran):** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.txt`
+- **Base64 Main:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.b64`
+- **GPT-GEMINI:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub_gpt.txt` — Clean US/EU IPs for ChatGPT/Gemini
+- **Base64 GPT:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub_gpt.b64`
+- **JSON:** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.json`
 
-## Why Iran Optimized?
-- ✅ Reality (120pts) & Hysteria2 (90pts) on top - most effective vs Iran DPI
-- ✅ Port 443/2053/2083 prioritized (hardest to block)
-- ✅ Iran servers (IR) removed, foreign low-latency preferred (DE/NL/TR/US)
-- ✅ TLS+443 bonus, plain configs penalized
+## Why Iran Optimized? (yebekhe-style)
+- Reality validated (`pbk` 44 chars, `fp=chrome`, `sni=google.com`, `flow=xtls-rprx-vision`) - top priority
+- Hysteria2/TUIC UDP for Iran DPI
+- Port 443/2053/2083 prioritized
+- IR filtered, DE/NL/TR/US preferred
+- GPT-GEMINI tagged: only `US/GB/DE/FR/NL/CA/JP` etc. non-blocked, `hosting=false` preferred for Gemini
 
 ## Protocols
-- `VLESS`: 299
-- `TROJAN`: 1
+- `VLESS`: 209
+- `TROJAN`: 52
+- `SS`: 39
 
-## Countries (closest to Iran first)
-- 🌍 `UN`: 189
-- 🇺🇸 `US`: 20
-- 🇩🇪 `DE`: 20
-- 🇳🇱 `NL`: 16
-- 🇬🇧 `GB`: 10
-- 🇫🇷 `FR`: 9
-- 🇸🇪 `SE`: 8
-- 🇫🇮 `FI`: 7
-- 🇷🇺 `RU`: 4
-- 🇹🇷 `TR`: 3
-- 🇯🇵 `JP`: 3
-- 🇳🇴 `NO`: 2
-- 🇨🇦 `CA`: 1
-- 🇰🇷 `KR`: 1
-- 🇱🇻 `LV`: 1
+## Countries
+- 🇺🇸 `US`: 104
+- 🌍 `UN`: 61
+- 🇬🇧 `GB`: 19
+- 🇩🇪 `DE`: 18
+- 🇫🇮 `FI`: 11
+- 🇳🇱 `NL`: 11
+- 🇷🇺 `RU`: 10
+- 🇨🇦 `CA`: 7
+- 🇹🇷 `TR`: 7
+- 🇸🇪 `SE`: 7
+- 🇳🇴 `NO`: 6
+- 🇫🇷 `FR`: 5
+- 🇦🇺 `AU`: 5
+- 🇵🇱 `PL`: 4
+- 🇰🇷 `KR`: 4
+
+## GPT-GEMINI Countries (ChatGPT/Gemini tested)
+_These configs have `GPT-GEMINI` in name and are in AI-allowed countries with clean IPs_
+- 🇺🇸 `US`: 50
+- 🇩🇪 `DE`: 8
+- 🇨🇦 `CA`: 6
+- 🇬🇧 `GB`: 6
+- 🇫🇮 `FI`: 5
+- 🇰🇷 `KR`: 4
+- 🇳🇱 `NL`: 4
+- 🇦🇺 `AU`: 3
+- 🇵🇭 `PH`: 2
+- 🇯🇵 `JP`: 2
 
 ---
-Auto-updated every 6 hours via GitHub Actions. Optimized for Iran.
+Auto-updated every 6 hours. Iran + GPT optimized (yebekhe/barry-far sources).
