@@ -2,22 +2,27 @@ import requests
 import base64
 import re
 
-# Iran-optimized sources: mix of large aggregators + sources known to have Reality/HY2
-# Tested for Iran users - includes Splitted-By-Protocol for better Reality coverage
+# Iran-optimized sources: yebekhe-style - prioritize Reality/HY2 splitted + large aggregators
+# yebekhe collects from 20+ Iranian Telegram channels (VlessConfig, FreeIranT, etc.) and splits by protocol
 FILE_SOURCES = [
-    # Large aggregators (mixed)
+    # yebekhe - direct splitted (most Iran-tested, like original yebekhe)
+    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/reality",
+    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/vless",
+    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/vmess",
+    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/trojan",
+    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/hysteria2",
+    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/normal/tuic",
+    # barry-far Splitted-By-Protocol (good for Iran)
     "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/vless.txt",
-    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/vmess.txt",
-    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/trojan.txt",
-    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/shadowsocks.txt",
+    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/reality.txt",
+    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/hysteria2.txt",
     "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/All_Configs_Sub.txt",
+    # Large aggregators
     "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
-    "https://raw.githubusercontent.com/yebekhe/TelegramV2rayCollector/main/sub/mixed",
     "https://raw.githubusercontent.com/soroushmirzaei/telegram-configs-collector/main/splitted/mixed",
     "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/sub/mixed",
     "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/Splitted-By-Protocol/vless.txt",
-    # Fallbacks that still work but smaller
-    "https://raw.githubusercontent.com/V2RAYCONFIGSPOOL/V2RAY_SUB/refs/heads/main/v2ray_configs.txt",
+    # Fallback
     "https://raw.githubusercontent.com/ALIILAPRO/v2ray-configs/main/sub/mixed",
 ]
 
@@ -26,10 +31,8 @@ def smart_decode(text):
     if not text or len(text) < 10:
         return []
     results = [text]
-    # Only try base64 if text looks like base64 (no :// and long)
     if "://" not in text[:200] and len(text) > 100:
         try:
-            # quick base64 char check
             if re.match(r'^[A-Za-z0-9+/=\n\r\s]+$', text.strip()):
                 padded = text.strip() + "=" * (-len(text.strip()) % 4)
                 decoded = base64.b64decode(padded).decode('utf-8', errors='ignore')
@@ -38,7 +41,6 @@ def smart_decode(text):
         except:
             pass
     else:
-        # also try whole text as base64 if it doesn't contain :// in first chunk but has it after decode
         try:
             padded = text.strip() + "=" * (-len(text.strip()) % 4)
             decoded = base64.b64decode(padded).decode('utf-8', errors='ignore')
@@ -62,7 +64,6 @@ def scrape_all():
             response = requests.get(url, headers=headers, timeout=15)
             if response.status_code == 200 and response.text.strip():
                 content = response.text
-                # skip html error pages
                 if "<html" in content.lower()[:500] and "://" not in content:
                     print(f"  -> skipped (html)")
                     continue
@@ -78,8 +79,7 @@ def scrape_all():
     print(f"Fetched {success}/{len(FILE_SOURCES)} sources successfully")
     
     combined = "\n".join(all_texts)
-    # Basic stats for Iran debugging
-    for proto in ['vless', 'vmess', 'trojan', 'ss://', 'hysteria2', 'hy2://', 'tuic']:
+    for proto in ['vless', 'vmess', 'trojan', 'ss://', 'hysteria2', 'hy2://', 'tuic', 'reality']:
         cnt = combined.lower().count(proto.lower())
         if cnt:
             print(f"  {proto}: {cnt} occurrences in raw")

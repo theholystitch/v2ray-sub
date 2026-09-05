@@ -7,51 +7,84 @@ import urllib.parse
 IRAN_FAV_PORTS = {443, 8443, 2053, 2083, 2087, 2096, 2086, 2095, 8080, 80}
 
 def iran_score(info):
-    """Score configs for Iran internet - higher = better for Iran firewall bypass"""
-    raw_low = info['raw'].lower()
+    """Score configs for Iran internet - yebekhe-style: Reality params validated"""
+    raw = info['raw']
+    raw_low = raw.lower()
     port = info.get('port', 0)
     score = 0
 
-    # 1. REALITY is king in Iran 2024-2026
-    if 'security=reality' in raw_low or 'pbk=' in raw_low:
+    # 1. REALITY - king in Iran 2024-2026 - validate params like yebekhe does
+    # yebekhe Reality configs always have: security=reality, pbk= (44 chars), fp=, sni=
+    has_reality = 'security=reality' in raw_low
+    has_pbk = 'pbk=' in raw_low
+    has_fp = 'fp=' in raw_low or 'fingerprint=' in raw_low
+    has_sni = 'sni=' in raw_low or 'servername=' in raw_low
+    
+    if has_reality and has_pbk:
         score += 120
-        # Reality with good SNI (google, microsoft, etc) is even better
-        if any(s in raw_low for s in ['google.com', 'microsoft.com', 'yahoo.com', 'apple.com']):
+        # Validate pbk length (44 chars base64) - real reality has proper key
+        m = re.search(r'pbk=([^&]+)', raw, re.IGNORECASE)
+        if m and 40 <= len(m.group(1)) <= 50:
+            score += 5
+        # Flow xtls-rprx-vision is standard for reality
+        if 'xtls-rprx-vision' in raw_low:
+            score += 5
+        # Good SNI (yebekhe uses google.com, yahoo, microsoft)
+        if any(s in raw_low for s in ['google.com', 'microsoft.com', 'yahoo.com', 'apple.com', 'cloudflare.com']):
             score += 10
+        # Fingerprint chrome = best for Iran
+        if 'fp=chrome' in raw_low or 'fingerprint=chrome' in raw_low:
+            score += 5
+        # sni must be present for reality to work
+        if has_sni:
+            score += 5
+        else:
+            score -= 30  # reality without sni is broken
+    elif has_reality and not has_pbk:
+        # fake reality
+        score -= 40
 
     # 2. Hysteria2 / TUIC - UDP based, very effective in Iran
     if info['protocol'] in ('hysteria2', 'hy2', 'tuic'):
         score += 90
+        # hy2 with obfs is better
+        if 'obfs=' in raw_low or 'salamander' in raw_low:
+            score += 5
 
-    # 3. Trojan + TLS on 443 - still works well
+    # 3. Trojan + TLS on 443 - still works well in Iran
     if info['protocol'] == 'trojan':
         score += 55
         if port == 443:
             score += 15
+        if 'tls' in raw_low:
+            score += 10
 
     # 4. VLESS TLS is better than plain
     if 'tls' in raw_low or 'security=tls' in raw_low:
         score += 25
         if port == 443:
             score += 15
+        # WS + TLS + CDN is common in yebekhe
+        if 'ws' in raw_low and port in (443, 8443, 2053):
+            score += 10
 
-    # 5. WS + CDN (Cloudflare) often survives
-    if 'ws' in raw_low and any(c in raw_low for c in ['cloudflare', 'cdn']):
-        score += 10
-
-    # 6. Favored ports for Iran DPI bypass
+    # 5. Favored ports for Iran DPI bypass (like yebekhe & barry-far)
     if port in IRAN_FAV_PORTS:
         score += 18
-    elif port in (443, 8443):
-        score += 20
 
-    # 7. Penalize plain non-TLS on random ports (easily blocked)
+    # 6. Penalize plain non-TLS on random ports (easily blocked by Iran GFW)
     if 'security=none' in raw_low and port not in IRAN_FAV_PORTS:
         score -= 20
 
-    # 8. GRPC + Reality combo bonus
+    # 7. GRPC + Reality combo bonus
     if 'grpc' in raw_low and 'reality' in raw_low:
         score += 10
+
+    # 8. Penalize configs with empty sni or bad dest for reality
+    if has_reality and 'sni=' in raw_low:
+        sni_m = re.search(r'sni=([^&]+)', raw, re.IGNORECASE)
+        if sni_m and len(sni_m.group(1)) < 4:
+            score -= 20
 
     return score
 
@@ -73,7 +106,10 @@ def parse_vless(link):
         host, port_part = host_part.split(':', 1)
         port = int(port_part.split('?')[0].split('/')[0].split('#')[0])
         host = host.strip().lower()
-        if not host or host in ('127.0.0.1', 'localhost'):
+        if not host or host in ('127.0.0.1', 'localhost') or '..' in host:
+            return None
+        # Filter invalid vless like yebekhe does - must have host length
+        if len(host) > 253:
             return None
         return {'protocol': 'vless', 'host': host, 'port': port, 'name': name, 'raw': link}
     except:
@@ -90,7 +126,7 @@ def parse_vmess(link):
         data = json.loads(decoded)
         host = str(data.get('add', '')).strip().lower()
         port = int(str(data.get('port', 0)).split('?')[0])
-        if not host or not port or host in ('127.0.0.1', 'localhost'):
+        if not host or not port or host in ('127.0.0.1', 'localhost') or '..' in host:
             return None
         return {'protocol': 'vmess', 'host': host, 'port': port, 'name': data.get('ps',''), 'raw': link}
     except:
@@ -123,17 +159,14 @@ def parse_ss(link):
         link = link.strip().split()[0]
         if not link.startswith("ss://"):
             return None
-        # ss://BASE64 or ss://method:pass@host:port
         raw = link.replace("ss://", "")
         if '#' in raw:
             raw = raw.split('#', 1)[0]
-        # try base64
         try:
             if '@' not in raw:
                 padded = raw + "=" * (-len(raw) % 4)
                 decoded = base64.b64decode(padded).decode('utf-8', errors='ignore')
                 if '@' in decoded and ':' in decoded:
-                    # method pass @ host:port
                     _, host_part = decoded.rsplit('@', 1)
                     if ':' in host_part:
                         host, port_part = host_part.rsplit(':', 1)
@@ -143,7 +176,6 @@ def parse_ss(link):
                             return {'protocol': 'ss', 'host': host, 'port': port, 'name': '', 'raw': link}
         except:
             pass
-        # plain form ss://method:pass@host:port
         if '@' in raw:
             _, host_part = raw.rsplit('@', 1)
             if ':' in host_part:
@@ -161,7 +193,6 @@ def parse_hy2(link):
         link = link.strip().split()[0]
         if not (link.startswith("hysteria2://") or link.startswith("hy2://") or link.startswith("hysteria://")):
             return None
-        # hy2://pass@host:port?params
         for prefix in ("hysteria2://", "hy2://", "hysteria://"):
             if link.startswith(prefix):
                 rest = link.replace(prefix, "")
@@ -206,14 +237,13 @@ def parse_tuic(link):
         return None
 
 def parse_all(raw_results):
-    print("Parsing configs for Iran (vless/vmess/trojan/ss/hy2/tuic)...")
+    print("Parsing configs for Iran (yebekhe-style: vless/vmess/trojan/ss/hy2/tuic)...")
     
     if isinstance(raw_results, dict):
         raw_text = raw_results.get("raw", "")
     else:
         raw_text = str(raw_results)
     
-    # Find all protocol types
     patterns = {
         'vless': re.findall(r'vless://[^\s<>"\'`]+', raw_text, re.IGNORECASE),
         'vmess': re.findall(r'vmess://[^\s<>"\'`]+', raw_text, re.IGNORECASE),
@@ -238,18 +268,16 @@ def parse_all(raw_results):
         for link in links:
             info = parser_fn(link)
             if info and info.get('host') and info.get('port'):
-                # filter obvious invalid
                 if len(info['host']) > 253 or '..' in info['host']:
                     continue
-                # Iran scoring
                 info['_iran_score'] = iran_score(info)
                 parsed.append(info)
     
     for proto, links in patterns.items():
-        print(f"  {proto}: {len(links)} raw -> {len([p for p in parsed if p['protocol']==proto or (proto=='hy2' and p['protocol'] in ('hysteria2','hysteria'))])} valid")
+        cnt = len([p for p in parsed if p['protocol']==proto or (proto=='hy2' and p['protocol'] in ('hysteria2','hysteria'))])
+        print(f"  {proto}: {len(links)} raw -> {cnt} valid")
     print(f"Total valid configs found: {len(parsed)}")
     
-    # Deduplicate by host:port only (protocol agnostic for Iran, same server different proto is duplicate)
     seen = set()
     unique = []
     for info in parsed:
@@ -258,9 +286,11 @@ def parse_all(raw_results):
             seen.add(key)
             unique.append(info)
     
-    # Sort by Iran score BEFORE checking - so Reality/HY2 are checked first
     unique.sort(key=lambda x: x.get('_iran_score', 0), reverse=True)
     
-    print(f"Unique configs: {len(unique)} (sorted by Iran suitability)")
-    # Keep score for main.py sorting, don't delete yet
+    print(f"Unique configs: {len(unique)} (sorted by Iran yebekhe suitability)")
+    # Log reality stats like yebekhe
+    reality_cnt = len([x for x in unique if 'security=reality' in x['raw'].lower() and 'pbk=' in x['raw'].lower()])
+    hy2_cnt = len([x for x in unique if x['protocol'] in ('hysteria2','hysteria')])
+    print(f"  Reality valid: {reality_cnt}, HY2: {hy2_cnt}")
     return unique
