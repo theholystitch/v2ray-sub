@@ -6,7 +6,7 @@ import re
 from datetime import datetime
 from collections import Counter
 
-from scraper import scrape_all
+from scraper import scrape_all, scrape_gpt
 from parser import parse_all
 from geo import get_flag, get_geo_batch, is_gpt_gemini_compatible
 from checker import check_all
@@ -62,37 +62,57 @@ async def main():
         # But mark is_gpt only for VLESS Reality US/CA later
         final.append((w,country))
     
-    # GPT-GEMINI strict: ONLY US/CA VLESS Reality like user example
-    # vless://...@us.pink-service.ru:443?security=reality&sni=us.pink-service.ru&pbk=...&sid=...&flow=xtls-rprx-vision
-    # Trojan can't open Gemini, so only VLESS Reality US/CA with correct flags
-    from geo import get_geo_batch
-    vless_reality_all = [x for x in unique if x['protocol']=='vless' and 'security=reality' in x['raw'].lower() and 'pbk=' in x['raw'].lower() and x['port']==443 and 'xtls-rprx-vision' in x['raw'].lower()]
-    print(f'VLESS Reality total {len(vless_reality_all)}, checking geo for GPT US/CA...')
-    vless_top = vless_reality_all[:150]
-    geo_hosts = [x['host'] for x in vless_top]
+    # GPT-GEMINI: Separate pool - WhiteDNS + example style (DO NOT use main scraper)
+    # User proven: brg.cloudmixsc.ir:15617 vless reality sni amp-api-edge.apps.apple.com xudp -> works for AI very well
+    # WhiteDNS base64.txt already filtered for GPT (311 configs, DE/US/IT with GPT tag)
+    print("Fetching GPT pool (WhiteDNS) separately...")
+    gpt_raw = scrape_gpt()
+    gpt_parsed = parse_all(gpt_raw)
+    # Filter for GPT: WhiteDNS style - vless reality with correct params (like example)
+    # Keep all WhiteDNS vless reality (not just US/CA) - DE/IT also work for AI via WhiteDNS outlet
+    gpt_candidates_raw=[]
+    for info in gpt_parsed:
+        raw_low=info['raw'].lower()
+        if info['protocol']!='vless':
+            continue
+        if 'security=reality' not in raw_low:
+            continue
+        if 'pbk=' not in raw_low:
+            continue
+        # WhiteDNS uses sni amp-api-edge.apps.apple.com / www.siemens.com / www.intel.com etc
+        # Accept any reality with sni and flow
+        if 'sni=' not in raw_low:
+            continue
+        gpt_candidates_raw.append(info)
+    print(f"GPT WhiteDNS parsed {len(gpt_candidates_raw)} VLESS Reality candidates")
+    # Geo for GPT to get CORRECT flags (fixes HU->US) - use real ipapi.co, not heuristic
+    # Include DE, US, IT etc as WhiteDNS provides - all GPT-compatible via WhiteDNS
+    gpt_top = gpt_candidates_raw[:200]
+    geo_hosts = [x['host'] for x in gpt_top]
     geo_infos = await get_geo_batch(geo_hosts, concurrency=10)
     gpt_candidates=[]
-    for info, geo in zip(vless_top, geo_infos):
+    for info, geo in zip(gpt_top, geo_infos):
         if isinstance(geo, Exception):
             continue
         country = geo.get('country','UN') if isinstance(geo, dict) else 'UN'
-        if country in ('US','CA'):
-            info['_is_gpt']=True
-            gpt_candidates.append((info,country))
-    # Ensure seed US/CA included
-    seed_hosts = ['us.pink-service.ru','ca.pink-service.ru']
-    for info in unique:
-        if info['host'] in seed_hosts and info not in [x[0] for x in gpt_candidates]:
-            c='US' if 'us.' in info['host'] else 'CA'
-            gpt_candidates.append((info,c))
-    print(f'GPT candidates found {len(gpt_candidates)} (VLESS Reality US/CA via real geo)')
+        if country in ('UN','IR','RU','CN','BY','KP','SY','CU','VE'):
+            # Skip blocked for AI, but keep DE/IT/US etc
+            continue
+        # Keep all non-blocked WhiteDNS countries (DE, IT, US, etc) - they all work for AI via WhiteDNS
+        info['_is_gpt']=True
+        gpt_candidates.append((info,country))
+    # Ensure example seed included
+    for info in gpt_parsed:
+        if info['host']=='brg.cloudmixsc.ir' and info not in [x[0] for x in gpt_candidates]:
+            gpt_candidates.append((info,'DE'))
+    print(f'GPT candidates after geo {len(gpt_candidates)} (WhiteDNS style, correct flags)')
     gpt_infos=[x[0] for x in gpt_candidates[:150]]
     gpt_working=await check_all(gpt_infos, max_check=120, timeout=3.0)
     print(f'GPT working {len(gpt_working)} / {len(gpt_infos)}')
     gpt_final=[]
     for w in gpt_working:
         orig=[c for info,c in gpt_candidates if info['raw'].split('#')[0]==w['raw'].split('#')[0]]
-        country=orig[0] if orig else 'US'
+        country=orig[0] if orig else 'DE'
         w['_is_gpt']=True
         gpt_final.append((w,country))
     

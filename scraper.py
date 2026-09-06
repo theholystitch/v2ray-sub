@@ -97,3 +97,43 @@ def scrape_all():
             print(f"  {proto}: {cnt} occurrences in raw")
     
     return {"raw": combined}
+
+# GPT-specific sources - DO NOT affect main Iran scraper (user request)
+GPT_SOURCES = [
+    "https://raw.githubusercontent.com/iampedii/whitedns-sub/refs/heads/main/base64.txt",
+    # Fallback for GPT - also include main reality for US
+    "https://raw.githubusercontent.com/barry-far/V2ray-Config/refs/heads/main/Splitted-By-Protocol/vless.txt",
+]
+
+# Example proven GPT config (WhiteDNS style - DE with amp-api-edge.apps.apple.com, xudp, reality)
+GPT_SEED = "vless://c9c64c4b-c12a-4673-be52-21c080ac07a1@brg.cloudmixsc.ir:15617?encryption=none&flow=xtls-rprx-vision&security=reality&sni=amp-api-edge.apps.apple.com&fp=chrome&pbk=zAjmD7mwpdYpvo5W5iZvSJAJ1xnuXnFNEZAQ-NoSXwg&sid=8cf95f839e46a5c3&packetEncoding=xudp&type=tcp#DE-GPT-FI"
+
+def scrape_gpt():
+    """Separate GPT pool - WhiteDNS + example config style (DE/US with apple.com SNI, xudp, reality)"""
+    all_texts=[]
+    headers={"User-Agent":"Mozilla/5.0"}
+    success=0
+    for url in GPT_SOURCES:
+        try:
+            print(f"[GPT] Fetching: {url}")
+            r=requests.get(url, headers=headers, timeout=15)
+            if r.status_code==200 and r.text.strip():
+                if "<html" in r.text.lower()[:500] and "://" not in r.text:
+                    continue
+                decoded=smart_decode(r.text)
+                all_texts.extend(decoded)
+                success+=1
+                print(f"  [GPT] -> {len(r.text)} chars")
+            else:
+                print(f"  [GPT] failed {r.status_code}")
+        except Exception as e:
+            print(f"[GPT] Error {url}: {e}")
+    # Add proven WhiteDNS example
+    all_texts.append(GPT_SEED)
+    print(f"[GPT] Fetched {success}/{len(GPT_SOURCES)} + 1 seed (WhiteDNS DE example)")
+    combined="\n".join(all_texts)
+    for proto in ['vless','reality','whitedns','gpt']:
+        cnt=combined.lower().count(proto)
+        if cnt:
+            print(f"  [GPT] {proto}: {cnt}")
+    return {"raw": combined}
