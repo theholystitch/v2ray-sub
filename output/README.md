@@ -1,6 +1,6 @@
 # V2Ray Sub - Stitch Iran
 
-**Updated:** 2026-09-05 22:33 UTC
+**Updated:** 2026-09-06 02:21 UTC
 **Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 100
 
 ## Subscription Links
@@ -18,39 +18,39 @@
 - GPT-GEMINI tagged: only `US/GB/DE/FR/NL/CA/JP` etc. non-blocked, `hosting=false` preferred for Gemini
 
 ## Protocols
-- `VLESS`: 209
-- `TROJAN`: 52
-- `SS`: 39
+- `VLESS`: 199
+- `SS`: 51
+- `TROJAN`: 50
 
 ## Countries
-- 🇺🇸 `US`: 104
-- 🌍 `UN`: 61
-- 🇬🇧 `GB`: 19
-- 🇩🇪 `DE`: 18
-- 🇫🇮 `FI`: 11
-- 🇳🇱 `NL`: 11
-- 🇷🇺 `RU`: 10
+- 🇺🇸 `US`: 102
+- 🌍 `UN`: 62
+- 🇩🇪 `DE`: 26
+- 🇫🇮 `FI`: 14
+- 🇬🇧 `GB`: 13
+- 🇷🇺 `RU`: 12
+- 🇳🇱 `NL`: 9
 - 🇨🇦 `CA`: 7
-- 🇹🇷 `TR`: 7
-- 🇸🇪 `SE`: 7
-- 🇳🇴 `NO`: 6
+- 🇳🇴 `NO`: 7
+- 🇹🇷 `TR`: 6
+- 🇵🇱 `PL`: 5
 - 🇫🇷 `FR`: 5
 - 🇦🇺 `AU`: 5
-- 🇵🇱 `PL`: 4
 - 🇰🇷 `KR`: 4
+- 🇸🇪 `SE`: 3
 
 ## GPT-GEMINI Countries (ChatGPT/Gemini tested)
 _These configs have `GPT-GEMINI` in name and are in AI-allowed countries with clean IPs_
-- 🇺🇸 `US`: 50
-- 🇩🇪 `DE`: 8
+- 🇺🇸 `US`: 49
+- 🇩🇪 `DE`: 9
 - 🇨🇦 `CA`: 6
-- 🇬🇧 `GB`: 6
 - 🇫🇮 `FI`: 5
 - 🇰🇷 `KR`: 4
 - 🇳🇱 `NL`: 4
 - 🇦🇺 `AU`: 3
+- 🇵🇱 `PL`: 3
+- 🌍 `UN`: 3
 - 🇵🇭 `PH`: 2
-- 🇯🇵 `JP`: 2
 
 ---
 Auto-updated every 6 hours. Iran + GPT optimized (yebekhe/barry-far sources).
