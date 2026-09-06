@@ -118,26 +118,32 @@ async def main():
         w['_is_gpt']=True
         gpt_final.append((w,country))
     
-    # Build selected
-    selected = final[:MAX_CONFIGS]
-    if len(selected)<MAX_CONFIGS:
+    # Build selected - ensure at least 15% AI configs IN MAIN SUB (user requirement)
+    # Keep main Iran configs but inject AI from WhiteDNS
+    ai_needed = max(45, MAX_CONFIGS * 15 // 100)  # 15% = 45 for 300
+    ai_inject = gpt_final[:ai_needed]
+    # Take 255 usual + 45 AI
+    usual_needed = MAX_CONFIGS - len(ai_inject)
+    selected_usual = final[:usual_needed]
+    if len(selected_usual) < usual_needed:
         extra=[x for x in unique[300:600] if x not in [f[0] for f in final]]
-        for info in extra[:MAX_CONFIGS-len(selected)]:
-            selected.append((info,'US'))
+        for info in extra[:usual_needed-len(selected_usual)]:
+            selected_usual.append((info,'US'))
+    selected = selected_usual + ai_inject
+    # Shuffle to distribute AI throughout list (keep AI not all at bottom)
+    # Sort by iran_score to keep quality order but AI already high
+    selected.sort(key=lambda x: x[0].get('_iran_score', 0), reverse=True)
     
-    # For usual, tag only those that are also GPT (US/CA VLESS Reality) to avoid wrong flags
-    # Hungarian -> US flag fixed by real geo, so no misflag
     gpt_selected = gpt_final[:100]
     
     print(f"Selected {len(selected)} total, GPT {len(gpt_selected)} (US {sum(1 for _,c in gpt_selected if c=='US')} CA {sum(1 for _,c in gpt_selected if c=='CA')})")
     
-    # Rename
+    # Rename - ensure 15% AI tagged in main (including DE/IT WhiteDNS)
     renamed=[]
     for i,(info,c) in enumerate(selected,1):
         flag=get_flag(c)
-        # Only tag as GPT if actually US/CA VLESS Reality (prevents Trojan flagged as GPT)
-        is_gpt = info.get('_is_gpt',False) and c in ('US','CA') and info['protocol']=='vless' and 'reality' in info['raw'].lower()
-        # For usual list, don't tag Trojan as GPT (fixes Trojan can't open Gemini)
+        # Tag any AI from WhiteDNS (DE/US/IT etc) as GPT - user requires 15% AI with tag in main
+        is_gpt = info.get('_is_gpt',False)  # already marked via WhiteDNS pool
         renamed.append(rename(info, flag, i, is_gpt=is_gpt))
     
     renamed_gpt=[]
