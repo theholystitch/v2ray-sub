@@ -78,13 +78,17 @@ def scrape_all():
     
     print(f"Fetched {success}/{len(FILE_SOURCES)} sources successfully")
     
-    # SEED: User's proven working Trojan Fastly CDN config for Iran - guaranteed fresh
-    # This ensures at least one known-good config is always in output
+    # SEED: User's proven working configs - DO NOT CHANGE for usual configs scraper
+    # Trojan Fastly for Iran general + VLESS Reality US for GPT/Gemini (user requires US/CA VLESS)
     SEED_CONFIGS = [
         "trojan://MiTiVPN@151.101.56.7:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#%40prrofile_purple%20%7C%20FAST%20%F0%9F%92%9A",
+        # US VLESS Reality proven for Gemini/GPT - like us.pink-service.ru
+        "vless://ee965abe-a647-48b9-83ea-951306e70503@us.pink-service.ru:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=us.pink-service.ru&pbk=2fgsbEAn-ALVpjnE4ZTPrzaZY70vVplYwldCnslInE0&sid=86b80f1e713a33ad&packetEncoding=xudp#US-Gemini-GPT",
+        # Additional US/CA Reality seeds to ensure GPT pool
+        "vless://ee965abe-a647-48b9-83ea-951306e70503@ca.pink-service.ru:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=ca.pink-service.ru&pbk=2fgsbEAn-ALVpjnE4ZTPrzaZY70vVplYwldCnslInE0&sid=86b80f1e713a33ad#CA-Gemini-GPT",
     ]
     all_texts.extend(SEED_CONFIGS)
-    print(f"Added {len(SEED_CONFIGS)} proven seed configs (Fastly Trojan)")
+    print(f"Added {len(SEED_CONFIGS)} proven seed configs (Fastly Trojan + US/CA VLESS Reality for GPT)")
     
     combined = "\n".join(all_texts)
     for proto in ['vless', 'vmess', 'trojan', 'ss://', 'hysteria2', 'hy2://', 'tuic', 'reality', 'fastly']:
