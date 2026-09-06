@@ -1,42 +1,50 @@
 {
   "name": "Stitch Iran",
-  "updated": "2026-09-06 10:03 UTC",
+  "updated": "2026-09-06 11:32 UTC",
   "total": 300,
-  "gpt_count": 36,
+  "gpt_count": 91,
   "countries": {
     "US": 300
   },
   "protocols": {
-    "vless": 169,
-    "ss": 80,
+    "vless": 168,
+    "ss": 81,
     "trojan": 51
   },
   "gpt_countries": {
-    "US": 35,
-    "CA": 1
+    "US": 34,
+    "GB": 10,
+    "DE": 9,
+    "NL": 7,
+    "SE": 6,
+    "JP": 5,
+    "SG": 5,
+    "KR": 3,
+    "TW": 2,
+    "MY": 2
   },
   "links": [
-    "trojan://MiTiVPN@151.101.56.7:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&path=@mehrosaboran&security=tls&alpn=http/1.1&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.7:443?path=/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/D-e2@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP/---@MetiVIP---@MetiVIP&security=tls&alpn=http/1.1&insecure=1&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=1&sni=ssl.fastly.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.7:443?path=/--&security=tls&alpn=http/1.1&insecure=0&host=mitivpn-mitivpn-mitivpn---mitivpn--mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@199.232.78.160:443?path=%2F&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn-ss-mitivpn-----mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.7:443?path=/--&security=tls&alpn=http/1.1&insecure=0&host=.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn-ss-ss.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@140.248.185.253:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/s-w@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=4-mitivpn--mitivpn------mitivpn.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.7:443?path=%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2FD-e2%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTiVPN@151.101.56.230:443?security=tls&sni=ssl.fastly.com&alpn=http/1.1&fp=chrome&allowinsecure=0&type=ws&host=MiTiVPN-MiTiVPN-MiTiVPN---MiTiVPN--MiTiVPN.global.ssl.fastly.net&path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8"
+    "ss://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&security=reality&sni=www.cloudflare.com&type=tcp#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.74:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.225:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.90:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.232:443?flow=xtls-rprx-vision&encryption=none&security=reality&sni=yahoo.com&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a&type=tcp&headerType=none#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.182:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.173:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.133:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8",
+    "ss://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.212:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8"
   ],
   "gpt_links": [
-    "vless://d9e4721d-cdac-44c7-bc91-117367eac194@216.152.147.28:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=kjiuPmjM4IutdZudHfcPZHEwcrBEFY4qBLlvfC6A_Ss&sid=b9f8d3f8&type=tcp&headerType=none#Stitch%20%23001%20%F0%9F%87%A8%F0%9F%87%A6%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?security=reality&encryption=none&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.179:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.16:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&type=tcp&headerType=none#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?security=reality&encryption=none&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&security=reality&sni=www.cloudflare.com&type=tcp#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.95:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=chrome&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.224:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=chrome&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a&packetEncoding=xudp#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI"
+    "vless://58c14e54-6db0-46fb-a1fb-8f3184197d94@vu2us7.87544899.xyz:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=maps.apple.com&fp=chrome&security=reality&pbk=w3YQOiDeNpUt3ehrLTTKht6tKUSszSrBu41Vi17WDmE&sid=7d9a41162999d9&packetEncoding=xudp#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://c1a31210-72a8-4fae-8233-b49fae8e771f@xray1-direct-mci1-fs-ce.freesocks.work:443?security=reality&alpn=v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus--v2rayNplus&encryption=none&pbk=7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=dl.google.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://2db3c7fd-e34a-4f5e-9e63-2aa55f6f9f99@23.191.200.207:443?security=reality&encryption=none&pbk=7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=dl.google.com#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d9e4721d-cdac-44c7-bc91-117367eac194@216.152.147.28:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=kjiuPmjM4IutdZudHfcPZHEwcrBEFY4qBLlvfC6A_Ss&sid=b9f8d3f8&type=tcp&headerType=none#Stitch%20%23004%20%F0%9F%87%A8%F0%9F%87%A6%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.95:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&fp=chrome&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.75:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.225:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?encryption=none&flow=xtls-rprx-vision&type=tcp&headerType=none&host=Telegram-Leviko_v2ray&security=reality&fp=chrome&sni=www.apple.com&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&sid=a3a578ab#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://1f8cf47a-b66a-4916-979f-26edfcf44eea@185.95.231.156:443?security=reality&encryption=none&pbk=8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To&host=Telegram-Leviko_v2ray&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.apple.com&sid=a3a578ab#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://78b8b0a4-e024-4f04-9f0f-b3620921cb7e@usa3.moon-night.ir:443?security=reality&encryption=none&pbk=PjR-SM4fOm2fY4mTqWoqZDRyxontvpailM0gBqUxlUQ&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=amp-api-edge.apps.apple.com&sid=e8f4426268c05621#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI"
   ]
 }
