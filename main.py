@@ -46,20 +46,22 @@ async def main():
     working = await check_all(top, max_check=300, timeout=3.0)
     print(f"Working usual {len(working)} / 300")
     
-    # Heuristic country for usual (fast, no ip-api hang for 300) - keep Trojan Fastly as US
+    # Real geo for usual to get diverse countries (fixes ALL US bug - user wants DE etc)
+    print("Geo for main (real ipapi.co for DE/US/etc)...")
+    main_hosts=[x['host'] for x in working]
+    main_geo=await get_geo_batch(main_hosts, concurrency=10)
     final=[]
-    for w in working:
-        host=w['host']
-        raw=w['raw'].lower()
-        if 'fastly' in raw or host.startswith('151.101.') or host.startswith('199.232.') or host.startswith('140.248.'):
+    for w, geo in zip(working, main_geo):
+        if isinstance(geo, Exception):
             country='US'
         else:
-            # For usual, keep simple: US for pink-service etc, else US
-            country='US' if 'us.' in host else 'CA' if 'ca.' in host else 'US'
-            # If we have real geo cached, use it, else heuristic
-            # For usual we don't need strict, so heuristic ok
-        w['_is_gpt']= False  # usual not tagged unless proven US/CA VLESS
-        # But mark is_gpt only for VLESS Reality US/CA later
+            country=geo.get('country','US') if isinstance(geo, dict) else 'US'
+            if country in ('UN','IR'):
+                country='US'
+                # Fallback for Fastly
+                if 'fastly' in w['raw'].lower():
+                    country='US'
+        w['_is_gpt']=False
         final.append((w,country))
     
     # GPT-GEMINI: Separate pool - WhiteDNS + example style (DO NOT use main scraper)
