@@ -1,34 +1,33 @@
 {
   "name": "Stitch Iran",
-  "updated": "2026-09-16 15:55 UTC",
+  "updated": "2026-09-16 20:44 UTC",
   "total": 300,
-  "gpt_count": 89,
+  "gpt_count": 87,
   "countries": {
-    "US": 202,
-    "DE": 32,
+    "US": 211,
+    "DE": 31,
     "NL": 12,
-    "GB": 11,
-    "FI": 7,
+    "GB": 8,
     "RU": 6,
+    "FI": 6,
     "HK": 5,
     "SE": 4,
-    "IN": 4,
-    "LV": 3,
-    "KR": 3,
-    "PL": 3,
+    "IN": 3,
     "RO": 2,
+    "PL": 2,
     "IL": 2,
+    "LV": 2,
+    "KR": 2,
     "TR": 2,
-    "LT": 1,
-    "CA": 1
+    "CA": 2
   },
   "protocols": {
-    "vless": 120,
-    "trojan": 101,
-    "ss": 79
+    "vless": 133,
+    "trojan": 98,
+    "ss": 69
   },
   "gpt_countries": {
-    "US": 43,
+    "US": 41,
     "DE": 15,
     "NL": 6,
     "GB": 4,
@@ -40,27 +39,27 @@
     "IN": 2
   },
   "links": [
-    "trojan://MiTiVPN@151.101.56.7:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://mitivpn@167.82.76.27:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-3.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@151.101.56.7:443?path=@bored_vpn&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@167.82.76.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://M%49TIVPN@199.232.78.160:443?path=mehrosaboram&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn---ss--s---mitivpn-44s.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@167.82.76.7:443?path=@bored_vpn&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://mitivpn@199.232.78.160:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e1i@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-4.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MiTiVPN@151.101.56.7:443?path=%40mehrosaboran&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn-mitivpn-mitivpn--mitivpn-mitivpn--mitivpn.global.ssl.fastly.net&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@167.82.76.7:443?path=@bored_vpn&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@151.101.56.7:443?path=@bored_vpn&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-22s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8",
     "trojan://MITIVPN@151.101.56.7:443?path=@bored_vpn&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@199.232.78.101:443?path=%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2FNLSus---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN%2F---%40MiTiVPN---%40MiTiVPN&security=tls&alpn=http%2F1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@167.82.76.7:443?path=@vmesskhodam&security=tls&alpn=http/1.1&insecure=0&host=-n-33s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@199.232.78.101:443?path=@bored_vpn&security=tls&alpn=http/1.1&host=mitivpn---ss--s---mitivpn-11s.global.ssl.fastly.net&fp=chrome&type=ws&sni=ssl.fastly.com#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8"
+    "trojan://MITIVPN@199.232.78.101:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSus---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@151.101.56.7:443?path=/&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@167.82.76.7:443?Telegram=@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad,@GozargahAzad&sni=ssl.fastly.com&security=tls&path=@bored_vpn&allowInsecure=0&insecure=0&alpn=http/1.1&fp=chrome&type=ws&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8"
   ],
   "gpt_links": [
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.95:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.95:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://c8f9e08d-7d07-4059-9f71-0b014b9e0ec7@66.70.179.124:443?security=reality&type=raw&sni=www.apple.com&fp=chrome&flow=xtls-rprx-vision&sid=af7e79b5&pbk=feWlxnxySxB9B9HiuC4NwoTe_6slRqaW-EULPN0yxjY&encryption=none#Stitch%20%23003%20%F0%9F%87%A8%F0%9F%87%A6%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.89:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&host=Telegram-Leviko_v2ray&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.223:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://2db3c7fd-e34a-4f5e-9e63-2aa55f6f9f99@23.191.200.207:443?security=reality&encryption=none&pbk=7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=dl.google.com#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.212:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&security=reality&sid=c39cc7310a&sni=yahoo.com&type=tcp#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.212:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://45bbee73-a96e-4275-adea-6c298cd4412a@xray1-direct-mci1-fs-ce.freesocks.work:443?security=reality&encryption=none&pbk=7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=dl.google.com#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.212:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI"
+    "vless://975fc322-6e38-434b-a53c-d39fed49b9a9@47.251.108.158:443?security=reality&type=tcp&sni=www.cloudflare.com&fp=chrome&flow=xtls-rprx-vision&sid=896f52ba2cfca903&pbk=SmgYcFIvvFXW3xh4gvGhIJuQsaZvWkAylcjB6TEddEs&encryption=none#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://21a4d978-2c0b-4b26-8ac9-37d54e3a4ab1@45.149.172.80:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=FKTaFzF4zfAqXBdDQHwSVl_XyNcC3T17s_FqhHyZchg&security=reality&sid=fb9456392070128e&sni=www.amazon.com&type=tcp#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://9063f9fb-e88a-4ee0-b4a4-a92ca7316a9f@5.34.178.120:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=EVhq2BxKuw2Cody1DmF_HPvUYKwzdXbHP47blUv-eRM&security=reality&sid=55ab5559e3a6d10a&sni=www.cloudflare.com&type=tcp#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://a87bf8a2-17a4-3054-b51e-876b5f1d0f24@5.181.171.2:443?security=reality&encryption=none&pbk=YNGotlyAx3ELUmi4lxOUjiEDmibqf1pPUTE9o3YYT2Y&host=/?BIA_TELEGRAM@leviconfigs_leviconfigs&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=speed.cloudflare.com#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://58c14e54-6db0-46fb-a1fb-8f3184197d94@vu2us7.87544899.xyz:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=maps.apple.com&fp=chrome&security=reality&pbk=w3YQOiDeNpUt3ehrLTTKht6tKUSszSrBu41Vi17WDmE&sid=7d9a41162999d9&packetEncoding=xudp#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.212:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.212:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.89:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&host=Telegram-Leviko_v2ray&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.16:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.95:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=yahoo.com&security=reality&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI"
   ]
 }
