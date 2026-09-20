@@ -1,7 +1,7 @@
 # V2Ray Sub - Stitch Iran
 
-**Updated:** 2026-09-20 02:48 UTC
-**Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 92 US/CA VLESS Reality
+**Updated:** 2026-09-20 10:24 UTC
+**Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 91 US/CA VLESS Reality
 
 ## Subscription Links
 - **Main (Iran - Trojan Fastly + Reality):** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.txt`
@@ -15,38 +15,38 @@
 - GPT-GEMINI: ONLY US/CA VLESS Reality `port 443` `xtls-rprx-vision` with real geo `ipapi.co` (no HU->US wrong flag, no Trojan)
 
 ## Protocols (Main)
-- `VLESS`: 118
+- `VLESS`: 117
 - `TROJAN`: 115
-- `SS`: 67
+- `SS`: 68
 
 ## Countries (Main)
-- 🇺🇸 `US`: 236
+- 🇺🇸 `US`: 229
 - 🇩🇪 `DE`: 16
-- 🇳🇱 `NL`: 9
-- 🇨🇦 `CA`: 5
+- 🇳🇱 `NL`: 13
+- 🇬🇧 `GB`: 8
 - 🇫🇷 `FR`: 5
-- 🇹🇷 `TR`: 4
+- 🇨🇦 `CA`: 4
+- 🇸🇪 `SE`: 3
 - 🇵🇱 `PL`: 3
-- 🇬🇧 `GB`: 3
 - 🇦🇺 `AU`: 3
-- 🇸🇪 `SE`: 2
-- 🇸🇬 `SG`: 2
+- 🇱🇻 `LV`: 2
 - 🇫🇮 `FI`: 2
 - 🇮🇱 `IL`: 2
-- 🇱🇻 `LV`: 2
+- 🇹🇷 `TR`: 2
+- 🇱🇹 `LT`: 2
 - 🇮🇳 `IN`: 2
 
 ## GPT-GEMINI Countries (Strict US/CA VLESS Reality)
-- 🇺🇸 `US`: 52
+- 🇺🇸 `US`: 49
 - 🇩🇪 `DE`: 8
+- 🇬🇧 `GB`: 7
 - 🇳🇱 `NL`: 6
-- 🇬🇧 `GB`: 4
 - 🇵🇱 `PL`: 4
 - 🇨🇦 `CA`: 3
+- 🇱🇹 `LT`: 3
 - 🇫🇷 `FR`: 3
-- 🇫🇮 `FI`: 2
-- 🇹🇷 `TR`: 2
-- 🇱🇹 `LT`: 2
+- 🇸🇪 `SE`: 1
+- 🇱🇻 `LV`: 1
 
 ---
 Auto-updated every 6 hours. Iran + GPT strict US/CA.
