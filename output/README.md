@@ -1,6 +1,6 @@
 # V2Ray Sub - Stitch Iran
 
-**Updated:** 2026-10-11 17:13 UTC
+**Updated:** 2026-10-11 21:20 UTC
 **Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 100 US/CA VLESS Reality
 
 ## Subscription Links
@@ -16,32 +16,33 @@
 
 ## Protocols (Main)
 - `VLESS`: 173
-- `TROJAN`: 95
-- `SS`: 32
+- `TROJAN`: 94
+- `SS`: 33
 
 ## Countries (Main)
-- 🇺🇸 `US`: 222
+- 🇺🇸 `US`: 212
 - 🇩🇪 `DE`: 31
+- 🇳🇱 `NL`: 11
 - 🇫🇮 `FI`: 10
 - 🇸🇪 `SE`: 9
-- 🇳🇱 `NL`: 7
+- 🇷🇺 `RU`: 7
 - 🇵🇱 `PL`: 4
-- 🇬🇧 `GB`: 4
+- 🇬🇧 `GB`: 3
 - 🇮🇱 `IL`: 2
-- 🇱🇻 `LV`: 2
-- 🇷🇺 `RU`: 2
-- 🇮🇳 `IN`: 2
 - 🇫🇷 `FR`: 2
+- 🇱🇻 `LV`: 2
+- 🇹🇷 `TR`: 2
+- 🇮🇳 `IN`: 2
 - 🇭🇰 `HK`: 2
 - 🇨🇦 `CA`: 1
 
 ## GPT-GEMINI Countries (Strict US/CA VLESS Reality)
-- 🇺🇸 `US`: 63
-- 🇩🇪 `DE`: 11
-- 🇳🇱 `NL`: 6
+- 🇺🇸 `US`: 57
+- 🇩🇪 `DE`: 13
+- 🇳🇱 `NL`: 8
 - 🇸🇪 `SE`: 5
-- 🇫🇮 `FI`: 3
-- 🇬🇧 `GB`: 2
+- 🇫🇮 `FI`: 4
+- 🇬🇧 `GB`: 3
 - 🇭🇰 `HK`: 2
 - 🇵🇱 `PL`: 2
 - 🇰🇷 `KR`: 1
