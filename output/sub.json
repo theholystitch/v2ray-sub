@@ -1,62 +1,63 @@
 {
   "name": "Stitch Iran",
-  "updated": "2026-10-22 02:49 UTC",
+  "updated": "2026-10-22 10:57 UTC",
   "total": 300,
-  "gpt_count": 66,
+  "gpt_count": 67,
   "countries": {
-    "US": 250,
-    "DE": 19,
+    "US": 252,
+    "DE": 18,
     "TR": 6,
     "FI": 4,
     "HK": 4,
-    "PL": 3,
-    "KR": 3,
-    "FR": 2,
-    "IL": 2,
+    "PL": 2,
     "RU": 2,
+    "IL": 2,
+    "FR": 2,
     "SG": 2,
     "IN": 2,
-    "SE": 1
+    "KR": 2,
+    "SE": 1,
+    "TW": 1
   },
   "protocols": {
-    "vless": 131,
-    "trojan": 101,
-    "ss": 68
+    "vless": 127,
+    "trojan": 103,
+    "ss": 70
   },
   "gpt_countries": {
-    "US": 36,
+    "US": 39,
     "DE": 14,
-    "KR": 3,
     "TR": 3,
+    "KR": 2,
     "FI": 2,
     "HK": 2,
     "SE": 1,
-    "FR": 1,
     "IL": 1,
-    "PL": 1
+    "SG": 1,
+    "FR": 1
   },
   "links": [
-    "trojan://MITIVpN@199.232.78.101:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/NLSus---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTIVPN@151.101.56.7:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/D-e2@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVpN@151.101.56.7:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@199.232.78.160:443?path=mehrosaboram&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-44s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MiTIVPN@167.82.76.7:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/D-e2@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVpN@167.82.76.7:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVpN@167.82.76.7:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/NLSus---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVpN@151.101.56.7:443?security=tls&sni=ssl.fastly.com&alpn=http/1.1&fp=chrome&type=ws&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&path=/#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MITIVPN@167.82.76.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8",
-    "trojan://MItIVPN@199.232.78.160:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-55e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8"
+    "trojan://MiTIVPN@199.232.78.101:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MItIVPN@199.232.78.101:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MiTIVPN@151.101.56.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/D-e2@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@167.82.76.7:443?path=/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/NLSs---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@167.82.76.7:443?path=@bored_vpn&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-33s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVpN@151.101.56.90:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/NLSus---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-66e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVPN@199.232.78.160:443?path=mehrosaboram&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-44s.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVpN@151.101.56.7:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/NLSus---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVpN@151.101.56.7:443?security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-22e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8",
+    "trojan://MITIVpN@199.232.78.101:443?path=/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/NLSus---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh/---@Tarkshodeh---@Tarkshodeh&security=tls&alpn=http/1.1&insecure=0&host=mitivpn---ss--s---mitivpn-11e.global.ssl.fastly.net&fp=chrome&type=ws&allowInsecure=0&sni=ssl.fastly.com#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8"
   ],
   "gpt_links": [
     "vless://975fc322-6e38-434b-a53c-d39fed49b9a9@47.251.108.158:443?security=reality&type=raw&sni=www.cloudflare.com&fp=chrome&flow=xtls-rprx-vision&sid=896f52ba2cfca903&pbk=SmgYcFIvvFXW3xh4gvGhIJuQsaZvWkAylcjB6TEddEs#Stitch%20%23001%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://975fc322-6e38-434b-a53c-d39fed49b9a9@47.251.108.158:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=SmgYcFIvvFXW3xh4gvGhIJuQsaZvWkAylcjB6TEddEs&security=reality&sid=896f52ba2cfca903&sni=www.cloudflare.com&type=tcp#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://9063f9fb-e88a-4ee0-b4a4-a92ca7316a9f@5.34.178.120:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=EVhq2BxKuw2Cody1DmF_HPvUYKwzdXbHP47blUv-eRM&security=reality&sid=55ab5559e3a6d10a&sni=www.cloudflare.com&type=tcp#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://1b4b11d5-4c2d-4533-9a55-636757cdee94@195.211.98.43:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA&security=reality&sid=9c56fddf237e8eaf&sni=www.cloudflare.com&type=tcp#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?security=reality&encryption=none&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://fb26530b-c9ca-4bb2-b726-6cddfa3afe66@vu2us97h.87544899.xyz:443?security=reality&encryption=none&pbk=kCYu5PbOfpqpetoFkUV0weDpxdeCN0UWRcL6mZtf6xc&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=maps.apple.com&sid=58f26f1ff75e9031#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&security=reality&sni=www.cloudflare.com&type=tcp#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://fb26530b-c9ca-4bb2-b726-6cddfa3afe66@vu1us4xuhv387.87544899.xyz:443?security=reality&encryption=none&pbk=7jzzCQ4KAUmRpX0Kota4NWk4FEv2XPB1HQNxHZy0OUo&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=maps.apple.com&sid=ada5a37d#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.168:443?security=reality&encryption=none&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=c39cc7310a#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
-    "vless://338764e6-0e53-4d51-8057-80ce8d49a963@xray2-direct-mci1-fs-ce.freesocks.work:443?security=reality&encryption=none&pbk=7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=dl.google.com#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI"
+    "vless://fb26530b-c9ca-4bb2-b726-6cddfa3afe66@vu1us4xuhv387.87544899.xyz:443?security=reality&encryption=none&pbk=7jzzCQ4KAUmRpX0Kota4NWk4FEv2XPB1HQNxHZy0OUo&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=maps.apple.com&sid=ada5a37d#Stitch%20%23002%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://37615d66-5467-44a3-bc23-f2c3bef7f761@44.248.233.99:443?security=reality&type=tcp&packetEncoding=none&allowInsecure=1&sni=aws.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=21270a66&pbk=p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM#Stitch%20%23003%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://37615d66-5467-44a3-bc23-f2c3bef7f761@44.248.233.99:443?security=reality&type=tcp&packetEncoding=none&sni=aws.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=21270a66&pbk=p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM#Stitch%20%23004%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://975fc322-6e38-434b-a53c-d39fed49b9a9@47.251.108.158:443?encryption=none&flow=xtls-rprx-vision&fp=&pbk=SmgYcFIvvFXW3xh4gvGhIJuQsaZvWkAylcjB6TEddEs&security=reality&sid=896f52ba2cfca903&sni=www.cloudflare.com&type=tcp#Stitch%20%23005%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://37615d66-5467-44a3-bc23-f2c3bef7f761@44.248.233.99:443?security=reality&type=raw&sni=aws.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=21270a66&pbk=p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM&encryption=none#Stitch%20%23006%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?security=reality&encryption=none&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&headerType=none&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com#Stitch%20%23007%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://37615d66-5467-44a3-bc23-f2c3bef7f761@tk1.high-speed-test-56424.me:443?security=reality&type=tcp&packetEncoding=none&allowInsecure=1&sni=aws.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=21270a66&pbk=p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM#Stitch%20%23008%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://37615d66-5467-44a3-bc23-f2c3bef7f761@tk1.high-speed-test-56424.me:443?security=reality&type=raw&sni=aws.amazon.com&fp=chrome&flow=xtls-rprx-vision&sid=21270a66&pbk=p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM#Stitch%20%23009%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI",
+    "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?security=reality&encryption=none&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&host=/?telegram--V2ray_confiig&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=www.cloudflare.com#Stitch%20%23010%20%F0%9F%87%BA%F0%9F%87%B8%20%F0%9F%A4%96%20GPT-GEMINI"
   ]
 }
