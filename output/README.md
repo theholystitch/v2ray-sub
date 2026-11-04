@@ -1,7 +1,7 @@
 # V2Ray Sub - Stitch Iran
 
-**Updated:** 2026-11-04 04:20 UTC
-**Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 68 US/CA VLESS Reality
+**Updated:** 2026-11-04 13:36 UTC
+**Total:** 300 (Iran-optimized, TCP-tested) | **GPT-GEMINI:** 69 US/CA VLESS Reality
 
 ## Subscription Links
 - **Main (Iran - Trojan Fastly + Reality):** `https://raw.githubusercontent.com/theholystitch/v2ray-sub/main/output/sub.txt`
@@ -16,21 +16,22 @@
 
 ## Protocols (Main)
 - `VLESS`: 140
-- `TROJAN`: 80
-- `SS`: 80
+- `TROJAN`: 81
+- `SS`: 79
 
 ## Countries (Main)
 - 🇺🇸 `US`: 238
 - 🇬🇧 `GB`: 19
-- 🇳🇱 `NL`: 12
+- 🇳🇱 `NL`: 10
 - 🇨🇦 `CA`: 10
 - 🇩🇪 `DE`: 7
 - 🇫🇷 `FR`: 4
 - 🇷🇴 `RO`: 2
 - 🇫🇮 `FI`: 2
 - 🇸🇬 `SG`: 2
-- 🇭🇰 `HK`: 2
 - 🇷🇺 `RU`: 2
+- 🇭🇰 `HK`: 2
+- 🇹🇷 `TR`: 2
 
 ## GPT-GEMINI Countries (Strict US/CA VLESS Reality)
 - 🇺🇸 `US`: 46
@@ -39,10 +40,10 @@
 - 🇩🇪 `DE`: 4
 - 🇫🇷 `FR`: 2
 - 🇬🇧 `GB`: 1
-- 🇭🇰 `HK`: 1
-- 🇷🇴 `RO`: 1
 - 🇫🇮 `FI`: 1
+- 🇷🇴 `RO`: 1
 - 🇸🇬 `SG`: 1
+- 🇭🇰 `HK`: 1
 
 ---
 Auto-updated every 6 hours. Iran + GPT strict US/CA.
